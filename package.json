@@ -2,8 +2,11 @@
   "name": "node-books-api-rest",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
+    "build": "tsc",
+    "prestart": "npm run build",
     "start": "node .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,6 +29,8 @@
   "devDependencies": {
     "@types/express": "^4.16.1",
     "@types/node": "^12.0.0",
-    "nodemon": "^1.19.0"
+    "nodemon": "^1.19.0",
+    "tslint": "^5.16.0",
+    "typescript": "^3.4.5"
   }
 }
